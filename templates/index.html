@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Info</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1 style="font-weight: bold">Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Mars Dictionary -->
+    <div class="row" id="Mars Information">
+      <div class="col-md-12">
+        <h1 style="font-weight: bold">Latest Mars News</h1>
+        <h3 style="font-weight: bold">{{Mars_Dict.news_title}} </h3>
+        <h4 class="heading">{{Mars_Dict.news_p}} </h4>
+        <br>
+
+        <p style="border:3px; border-style:solid; border-color:rgb(0, 0, 0); padding: 1em;">{{Mars_Dict.mars_weather}}</p>
+        <br>
+        <img src="{{Mars_Dict.image}}" width="200" height="400" alt="Mars">
+        <br>
+        <br>
+
+        <p>{{Mars_Dict.facts | safe}}</p>
+        <br>
+        <br>
+
+        <h2>Mars Hemispheres</h2>
+        <img src="{{Mars_Dict['hemisphere_image_urls'][0]['img_url']}}" width="400" height="400" alt="Mars_Hem1" class="img-thumbnail">
+        <img src="{{Mars_Dict['hemisphere_image_urls'][1]['img_url']}}" width="400" height="400" alt="Mars_Hem2" class="img-thumbnail">
+        <img src="{{Mars_Dict['hemisphere_image_urls'][2]['img_url']}}" width="400" height="400" alt="Mars_Hem3" class="img-thumbnail">
+        <img src="{{Mars_Dict['hemisphere_image_urls'][3]['img_url']}}" width="400" height="400" alt="Mars_Hem4" class="img-thumbnail">       
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
